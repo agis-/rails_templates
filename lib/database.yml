@@ -1,0 +1,17 @@
+defaults: &defaults
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  min_messages: warning
+
+development:
+  database: db_name_dev
+  <<: *defaults
+
+test:
+  database: db_name_test
+  <<: *defaults
+
+production:
+  database: db_name
+  <<: *defaults
