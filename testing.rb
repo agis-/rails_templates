@@ -14,11 +14,18 @@ end
 
 run "bundle"
 
-# RSpec & Capybara configuration
+# RSpec installation
 run "rails g rspec:install"
 run "mkdir spec/factories"
 run "mkdir spec/models"
-run "cp #{File.expand_path File.dirname(__FILE__)}/lib/factories_spec.rb spec/"
+
+# Load Capybara support for RSpec
 run "cp -f #{File.expand_path File.dirname(__FILE__)}/lib/spec_helper.rb spec/"
+
+# Run factory specs first when doing `spec rake`
+# as seen on http://robots.thoughtbot.com/post/30994874643/testing-your-factories-first
+run "cp #{File.expand_path File.dirname(__FILE__)}/lib/factories_spec.rb spec/"
 run "cp #{File.expand_path File.dirname(__FILE__)}/lib/spec.rake lib/tasks/"
+
+# Configure application to use with RSpec as the default testing framework
 run "cp -f #{File.expand_path File.dirname(__FILE__)}/lib/application.rb config/"
