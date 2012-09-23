@@ -1,7 +1,7 @@
 My Rails Application Templates
-====================
+================================
 
-You can use templates to automate your common all these changes you do each time you're creating a new Rails application.
+You can use application templates to automate these common tasks you do each time you're creating a new Rails application.
 
 Usage
 ---------
@@ -19,4 +19,4 @@ Templates
 * full.rb: This will create and configure an application with PostgreSQL, RSpec, Capybara, factory_girls, shoulda-matchers & Thin.
 * testing.rb: This will just install and configure RSpec, Capybara, factory_girls & shoulda-matchers.
 
-..soon more..
+Point at http://guides.rubyonrails.org/generators.html#application-templates for more info on writing your own templates.
